@@ -14,12 +14,7 @@ class AddressFormParent extends Component {
 				password:
 					'$2a$10$Fw1TNqO02TtziWamXnFZRuC5b9pceEcikywKwSQfyhPtpEjWVREXO',
 				_id: '596a4b5cb30d635574119ae8',
-				addresses: [{
-      "zipcode": "78602",
-      "state": "Texas",
-      "city": "Austin",
-      "address": "4702 Hilldale dr."
-    },
+				addresses: ["3009 Washington Square",
     {
       "zipcode": "78602",
       "state": "Texas",

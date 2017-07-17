@@ -12,6 +12,7 @@ const {
   WORKERS_DELETE,
   WORKERS_UPDATE,
   WORKERS_LOGIN,
+  WORKERS_FILTER,
 } = require('../../routes')
 
 const router = express.Router()
@@ -116,6 +117,20 @@ router.put(WORKERS_UPDATE, (req, res, next) => {
       res.sendStatus(404)
     })
     .catch(next)
+})
+
+router.get(WORKERS_FILTER, (req, res, next) => {
+  console.log(req.params)
+  let { city } = req.params
+  city = city.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()})
+  console.log('city is:', city)
+  // res.send('check the console')
+  Worker
+    .find({ "area": city })
+    .then((array, b) => {
+      console.log(array, b)
+      res.json(array)
+    })
 })
 
 module.exports = router
